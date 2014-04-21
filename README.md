@@ -1,4 +1,9 @@
-civomega-mod-bootstrap
-======================
+# CivOmega: Example Module
 
-The base code to use when creating a civomega module
+A dummy module for [CivOmega][civomega_repo]. See
+[the CivOmega repo][civomega_repo].
+
+* **CivOmega Demo**: http://www.civomega.com/
+* **CivOmega Repo**: https://github.com/CivOmega/civomega
+
+[civomega_repo]: https://github.com/CivOmega/civomega
