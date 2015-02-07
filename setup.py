@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='civomega-mod-example',
+setup(name='civomega-mod-bootstrap',
       version='2.0-alpha.3', # http://semver.org/
       description="",
       long_description="",
