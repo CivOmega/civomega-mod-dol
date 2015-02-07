@@ -1,4 +1,4 @@
-# CivOmega: Question Module Boilerplate
+# CivOmega: Question Module Bootstrap
 
 This is a dummy module for [CivOmega](https://github.com/CivOmega/civomega). CivOmega Modules are what connect datasets and APIs to question patterns.
 
