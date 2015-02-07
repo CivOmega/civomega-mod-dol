@@ -18,17 +18,17 @@ To build a module you first need to create a working version of [CivOmega](https
 
 * Fork this repository in GitHub. (It's the big button in the upper-right of the page.)
 * In your GitHub fork, go to the settings and rename it from `civomega-mod-example` to `civomega-mod-meaningful-name` (or whatever you'd like to call your module)
-* Clone this repository alongside wherever you cloned CivOmega. (If you have `civomega` checked out as `$HOME/Projects/civomega`, clone this from `$HOME/Projects` so you end up with `$HOME/Projects/civomega-mod-meaningful-name` (or etc).
+* Clone this repository alongside wherever you cloned CivOmega. (If you have `civomega` checked out as `$HOME/Projects/civomega`, clone this from `$HOME/Projects` so you end up with `$HOME/Projects/civomega-mod-meaningful-name` or etc.)
 
 **Inside the repo:**
 
-* Edit `setup.py` and change `civomega-mod-example` to `civomega-mod-meaningful-name` (or whatever your module is called)
+* Edit `setup.py` and in the `setup(name=` portion, change `civomega-mod-example` to `civomega-mod-meaningful-name` (or whatever your module is called)
 * Rename the `comod_example` directory to `comod_meaningful_name` (*note*: you must use underscores in the directory name).
-* Inside *that* directory, there's a templates directory. Inside there, rename the `comod_example` directory as well (using underscores, once again).
+* Inside *that* directory, there's a `templates` directory. Inside there, rename the `comod_example` directory as well (using the same name as before, with underscores).
 
 **Inside your `civomega` repo:**
 
-* Update `CIVOMEGA_MODULES` in `civomega/settings.py` to include `comod_meaningful_name` (using underscores, like in the directory name). It should look like this:
+* Update `CIVOMEGA_MODULES` in `civomega/settings.py` to include your module (using underscores like the directory name, i.e. `comod_meaningful_name`). It should look like this:
 
     ```python
     CIVOMEGA_MODULES = (
@@ -38,9 +38,9 @@ To build a module you first need to create a working version of [CivOmega](https
     )
     ```
 
-* Update `bin/activate` to include this line at the bottom:
+* Update `bin/activate` to include this line at the bottom, swapping out `$HOME/Projects/civomega-mod-meaningful-name` with the full path to where you cloned the repo:
 
-    ```shell
+    ```bash
     export PYTHONPATH="$HOME/Projects/civomega-mod-meaningful-name:$PYTHONPATH"
     ```
 
