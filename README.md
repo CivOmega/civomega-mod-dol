@@ -1,4 +1,4 @@
-# CivOmega: Example Question Module
+# CivOmega: Question Module Boilerplate
 
 This is a dummy module for [CivOmega](https://github.com/CivOmega/civomega). CivOmega Modules are what connect datasets and APIs to question patterns.
 
@@ -31,11 +31,13 @@ Wrap "blanks" in {braces}, and keep in mind that the content inside the braces d
 
 For example:
 
+```
 PATTERNS = frozenset([
 	"how much money did {organization} donate in {year}",
     "is {person} a {thing}?",
     "is {person} a {thing} in {place}?",
 ])
+```
 
 You can create multiple categories of pattern as well, if your module knows how to answer more than one type of question.  See the [Sunlight bill module](https://github.com/CivOmega/civomega-mod-sunlightbills) for an example of this type of behavior.
 
