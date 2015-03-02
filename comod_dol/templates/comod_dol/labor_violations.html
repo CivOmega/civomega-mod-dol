@@ -1,0 +1,28 @@
+{% if d.results|length == 0 %}
+  <p>We couldn't find any violations.</p>
+{% else %}
+  <p>{{ d.results|length }} results total:</p>
+
+  <table class="tablesorter">
+   <thead>
+   <tr>
+   <th>Company</th>
+   <th style="width: 200px;">Address</th>
+   <th style="width: 200px;">Violations</th>
+   </tr>
+   </thead>
+   <tbody>
+   {% for item in d.results %}
+   <tr>
+   <td>{{ item.trade_nm }}<br>({{ item.naics_code_description }})</td>
+   <td>{{ item.street_addr_1_txt }}<br>{{ item.city_nm }}, {{ item.st_cd}}, {{ item.zip_cd }}</td>
+   <td>{{ item.flsa_cl_violtn_cnt}}</td>
+   </tr>
+   {% endfor %}
+   </tbody>
+  </table>
+  <script type="text/javascript">
+   $(".tablesorter").tablesorter();
+  </script>
+  <p><em>Data provided by <a href="http://developer.dol.gov/dataset/dol-whd-compliance-dataset">The Department of Labor API</a></em></p>
+{% endif %}

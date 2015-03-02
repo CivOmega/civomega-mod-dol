@@ -1,0 +1,31 @@
+{% if d.results|length == 0 %}
+  <p>We couldn't find any agencies.</p>
+{% else %}
+  <p>{{ d.results|length }} results total:</p>
+
+  <table class="tablesorter">
+   <thead>
+   <tr>
+   <th style="width: 120px;">Agency</th>
+   <th>Name</th>
+   <th>Links</th>
+   </tr>
+   </thead>
+   <tbody>
+   {% for item in d.results %}
+   <tr>
+   <td>{{ item.Agency }}</td>
+   <td>
+   {{ item.AgencyFullName }}
+   </td>
+   <td>
+   </td>
+   </tr>
+   {% endfor %}
+   </tbody>
+  </table>
+  <script type="text/javascript">
+   $(".tablesorter").tablesorter();
+  </script>
+  <p><em>Data provided by <a href="https://developer.dol.gov">The Department of Labor API</a></em></p>
+{% endif %}
