@@ -5,7 +5,7 @@ Must define three methods:
 * render_answer_html(answer_data)
 * render_answer_json(answer_data)
 """
-from .patterns import PATTERNS, DOL_AGENCY_PATTERNS, LABOR_VIOLATION_PATTERNS
+from .patterns import PATTERNS, LABOR_VIOLATION_PATTERNS
 
 import xml.etree.ElementTree as ElementTree
 import os
@@ -61,11 +61,6 @@ def answer_pattern(pattern, args):
       # are typed in before firing off your search to the API.)
       return None
 
-    if pattern in DOL_AGENCY_PATTERNS:
-        return {
-          'type': 'agency_list',
-          'data': agency_lookup()
-        }
     if pattern in LABOR_VIOLATION_PATTERNS:
         # We might be looking up via zip code or text search, so see what
         # pattern the user used
@@ -90,11 +85,7 @@ def answer_pattern(pattern, args):
 # Applicable module-wide
 def render_answer_html(answer_data):
     # This receives what we got in `answer_pattern` and returns HTML.
-    if answer_data and answer_data.get('type', None) == "agency_list":
-      data = answer_data['data']
-      template = loader.get_template('comod_dol/agency_list.html')
-      return template.render(Context(data))
-    elif answer_data and answer_data.get('type', None) == "labor_violations":
+    if answer_data and answer_data.get('type', None) == "labor_violations":
       data = answer_data['data']
       template = loader.get_template('comod_dol/labor_violations.html')
       return template.render(Context(data))

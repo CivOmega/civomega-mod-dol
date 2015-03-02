@@ -5,10 +5,6 @@ but you must set `PATTERNS`)
 """
 
 # patterns for returning info about bills in congress
-DOL_AGENCY_PATTERNS = frozenset([
-    "What agencies are part of the Department of Labor"
-])
-
 LABOR_VIOLATION_PATTERNS = frozenset([
 	"Who has violated child labor laws in {city}"
 ])
@@ -20,4 +16,4 @@ LABOR_VIOLATION_PATTERNS = frozenset([
 #     "what are {person} and {person} talking about" but you can have
 #     "what are {person1} and {person2} talking about")
 
-PATTERNS = DOL_AGENCY_PATTERNS | LABOR_VIOLATION_PATTERNS
+PATTERNS = LABOR_VIOLATION_PATTERNS
